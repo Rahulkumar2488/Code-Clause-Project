@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Secular+One&display=swap" rel="stylesheet');
+:root{
+    --secular-font: 'Secular One', sans-serif;
+}
+*{
+    box-sizing: border-box;
+}
+body *{
+    font-family: 'Rubik', sans-serif;
+}
+/**
+Page Design
+*/
+body,
+html{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #282A3A;
+}
+.page-title{
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: 3px;
+    font-family: var(--secular-font);
+    text-align: center;
+    text-shadow: 0px 0px 3px #2020208c;
+}
+/* If Galler is empty */
+#gallery-container:empty:after{
+    content:"No Images found.";
+    position: absolute;
+    width: 100%;
+    font-weight: lighter;
+    font-size: 1.2rem;
+    font-style: italic;
+    text-align: center;
+}
+
+/* If Galler is not empty */
+#gallery-container:not(:empty){
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+/* Image Item Container */
+
+#gallery-container:not(:empty) .imageItem{
+    width: 29%;
+    height: 25vh;
+    margin-bottom: 1em;
+}
+
+/* Image Item */
+#gallery-container:not(:empty) .imageItem>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+/* Category Buttons Container */
+#category-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+/* Category Buttons */
+button.catbtn {
+    width: 30%;
+    background: #fff;
+    margin-bottom: 1em;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+button.catbtn.active {
+    background: #0988dd;
+    border-color: #0a8ce4;
+    color: #fff;
+}
+button.catbtn:hover{
+    color: #292929;
+    background: #ebebeb;
+    border-color: #dddcdc;
+}
+
+
